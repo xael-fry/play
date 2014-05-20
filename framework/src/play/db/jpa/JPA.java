@@ -16,6 +16,10 @@ public class JPA {
     public EntityManager entityManager;
     boolean readonly = true;
     boolean autoCommit = false;
+    
+    public static boolean isInitialized(){
+        return (local.get() != null);
+    }
 
     static JPA get() {
         if (local.get() == null) {
